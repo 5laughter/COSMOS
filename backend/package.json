@@ -1,0 +1,21 @@
+{
+  "name": "COSMOS-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "5laughter",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.12.4",
+    "nodemon": "^1.18.11"
+  },
+  "scripts": {
+    "start": "node src",
+    "start:dev": "nodemon --watch src/ src/index.js"
+  }
+}
