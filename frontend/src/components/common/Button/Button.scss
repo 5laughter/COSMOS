@@ -11,6 +11,7 @@
     cursor: pointer;
     user-select: none;
     display: inline-flex;
+    border-radius: 0.25rem;
 
     &.default {
         background: $oc-violet-6;
