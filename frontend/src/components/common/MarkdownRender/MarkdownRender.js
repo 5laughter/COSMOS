@@ -4,6 +4,19 @@ import classNames from 'classnames/bind';
 
 import marked from 'marked';
 
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/components/prism-bash.min.js';
+import 'prismjs/components/prism-jsx.min.js';
+import 'prismjs/components/prism-javascript.min.js';
+import 'prismjs/components/prism-css.min.js';
+import 'prismjs/components/prism-python.min.js';
+import 'prismjs/components/prism-c.min.js';
+import 'prismjs/components/prism-cpp.min.js';
+import 'prismjs/components/prism-arduino.min.js';
+import 'prismjs/components/prism-go.min.js';
+import 'prismjs/components/prism-docker.min.js';
+
 const cx = classNames.bind(styles);
 
 class MarkdownRender extends Component {
@@ -36,6 +49,10 @@ class MarkdownRender extends Component {
     componentDidUpdate(prevProps, prevState) {
         if(prevProps.markdown !== this.props.markdown) {
             this.renderMarkdown();
+        }
+
+        if(prevState.html !== this.state.html) {
+            Prism.highlightAll();
         }
     }
 
