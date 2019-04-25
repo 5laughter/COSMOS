@@ -5,7 +5,7 @@ const { ObjectId } = require('mongoose').Types;
 exports.checkObjectId = (ctx, next) => {
     const { id } = ctx.params;
 
-    if(!ObjectIed.isValid(id)) {
+    if(!ObjectId.isValid(id)) {
         ctx.status = 400;
         return null;
     }
@@ -71,9 +71,9 @@ exports.list = async (ctx) => {
             body: post.body.length < 200 ? post.body : `${post.body.slice(0, 200)}...`
         });
         ctx.body = posts.map(limitBodyLength);
-        ctx.body = posts;
+        ctx.set('Last-Page', Math.ceil(postCount / 10));
     } catch(e) {
-        ctx.throw(e, 500);
+        ctx.throw(500, e);
     }
 };
 

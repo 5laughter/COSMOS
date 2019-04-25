@@ -28,7 +28,7 @@ class Post extends Component {
         
         return (
             <div>
-                <PostInfo title={title} publishDate={publishedDate} tags={tags}/>
+                <PostInfo title={title} publishedDate={publishedDate} tags={tags}/>
                 <PostBody body={body}/>
             </div>
         )
@@ -38,7 +38,7 @@ class Post extends Component {
 export default connect(
     (state) => ({
         post: state.post.get('post'),
-        loading: state.pender.pending[ 'post/GET_POST' ]
+        loading: state.pender.pending['post/GET_POST']
     }),
     (dispatch) => ({
         PostActions: bindActionCreators(postActions, dispatch)
