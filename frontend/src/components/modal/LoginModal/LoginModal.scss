@@ -1,11 +1,12 @@
 @import '../../../styles/utils.scss';
 
-.from {
+.form {
     background: white;
     padding: 2rem;
     position: relative;
     padding-top: 2.5rem;
     width: 20rem;
+    border-radius: 1.5rem;
     .close {
         line-height: 2rem;
         font-size: 2rem;
